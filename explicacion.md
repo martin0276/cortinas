@@ -17,7 +17,7 @@ Diagrama de flujo:
 El flujo de tiempo comenzaría con un sensor de luz, el LDR 03, que está conectado a una resistencia y un potenciómetro para ajustar la sensibilidad con respecto a la luz que recibe el sensor LDR. Además,
 aunque no sea visible, también incluye un sensor ultrasónico conectado al ESP32 y dos motores paso a paso bipolares. Estos motores están conectados a un puente H L298N. Cabe destacar que el puente H solo puede controlar un motor con sus dos bobinas, pero al requerir solo una bobina por motor, se utiliza de esta manera por motivos económicos.
 
-C:\Captura.PNG
+
 
 
 En este esquema podemos ver cómo funcionará la información transmitida en el proyecto. Como se observa, el sensor ultrasónico y el LDR envían información al ESP32, y esta información se transmite al L298N, que controla las bobinas de cada motor. Los motores se mueven en función de la información proporcionada por los sensores.
