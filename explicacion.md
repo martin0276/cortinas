@@ -18,10 +18,12 @@ El flujo de tiempo comenzaría con un sensor de luz, el LDR 03, que está conect
 aunque no sea visible, también incluye un sensor ultrasónico conectado al ESP32 y dos motores paso a paso bipolares. Estos motores están conectados a un puente H L298N. Cabe destacar que el puente H solo puede controlar un motor con sus dos bobinas, pero al requerir solo una bobina por motor, se utiliza de esta manera por motivos económicos.
 
 
+![Captura](https://github.com/user-attachments/assets/b439d339-f2a9-46ab-a5eb-7009a3db3d98)
 
 
 En este esquema podemos ver cómo funcionará la información transmitida en el proyecto. Como se observa, el sensor ultrasónico y el LDR envían información al ESP32, y esta información se transmite al L298N, que controla las bobinas de cada motor. Los motores se mueven en función de la información proporcionada por los sensores.
 También se puede observar que el puente H debe estar conectado a una fuente externa de 12V, ya que el ESP32 no puede manejar esos valores, y con esta fuente es capaz de controlar los movimientos.
+![Captura2](https://github.com/user-attachments/assets/94954009-b6e2-4e5a-aa06-bf1355b82f88)
 
 Código:
 #include <AccelStepper.h>
