@@ -2,7 +2,7 @@
 El proyecto que quiero realizar son unas cortinas automáticas con un sensor de luz y otro sensor ultrasonido para detectar el porcentaje de apertura y que sea con comunicación i2f
 ## las conexiones serian:
 el esp 32  conectado a los sensores y al mismo tiempo a los motores paso a paso para que se puedan regular automáticamente 
-Materiales a usar:
+Materiales a usar:---
 2 motores paso a paso (bipolares)
 1 fotocélula
 1 sensor ultrasónico
