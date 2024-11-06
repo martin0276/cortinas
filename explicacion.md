@@ -2,30 +2,38 @@
 El proyecto que quiero realizar son unas cortinas automáticas con un sensor de luz y otro sensor ultrasonido para detectar el porcentaje de apertura y que sea con comunicación i2f
 ## las conexiones serian:
 el esp 32  conectado a los sensores y al mismo tiempo a los motores paso a paso para que se puedan regular automáticamente 
-Materiales a usar:___
+Materiales a usar: 
+
 2 motores paso a paso (bipolares)
 1 fotocélula
 1 sensor ultrasónico
 1 ESP32
-¿Por qué estos materiales?
-2 motores paso a paso (bipolares): Estos motores serían para mover la cortina horizontalmente. Sé que se puede hacer con uno solo, pero es para más potencia. Además, son bipolares para que puedan abrir y cerrar las cortinas.
-1 fotocélula: Es para detectar la cantidad de lúmenes que entran a la habitación y así determinar si se cierra o se abre.
-1 sensor ultrasónico: Es para que la cortina no siga avanzando y para que se pueda saber el porcentaje de la cortina que está abierta o cerrada y controlarlo.
-1 ESP32: Es para la parte de comunicación y para mover los motores.
-Diagrama de flujo:
+## ¿Por qué estos materiales?
+### 2 motores paso a paso (bipolares):
 
-El flujo de tiempo comenzaría con un sensor de luz, el LDR 03, que está conectado a una resistencia y un potenciómetro para ajustar la sensibilidad con respecto a la luz que recibe el sensor LDR. Además,
+Estos motores serían para mover la cortina horizontalmente. Sé que se puede hacer con uno solo, pero es para más potencia. Además, son bipolares para que puedan abrir y cerrar las cortinas.
+### 1 fotocélula:
+
+Es para detectar la cantidad de lúmenes que entran a la habitación y así determinar si se cierra o se abre.
+### 1 sensor ultrasónico:
+
+Es para que la cortina no siga avanzando y para que se pueda saber el porcentaje de la cortina que está abierta o cerrada y controlarlo. Es para la parte de comunicación y para mover los motores.
+## Diagrama de flujo:
+
+El diagrama de flujo comenzaría con un sensor de luz, el LDR 03, que está conectado a una resistencia y un potenciómetro para ajustar la sensibilidad con respecto a la luz que recibe el sensor LDR. Además,
 aunque no sea visible, también incluye un sensor ultrasónico conectado al ESP32 y dos motores paso a paso bipolares. Estos motores están conectados a un puente H L298N. Cabe destacar que el puente H solo puede controlar un motor con sus dos bobinas, pero al requerir solo una bobina por motor, se utiliza de esta manera por motivos económicos.
 
+![Captura2](https://github.com/user-attachments/assets/94954009-b6e2-4e5a-aa06-bf1355b82f88)
 
-![Captura](https://github.com/user-attachments/assets/b439d339-f2a9-46ab-a5eb-7009a3db3d98)
 
 
 En este esquema podemos ver cómo funcionará la información transmitida en el proyecto. Como se observa, el sensor ultrasónico y el LDR envían información al ESP32, y esta información se transmite al L298N, que controla las bobinas de cada motor. Los motores se mueven en función de la información proporcionada por los sensores.
 También se puede observar que el puente H debe estar conectado a una fuente externa de 12V, ya que el ESP32 no puede manejar esos valores, y con esta fuente es capaz de controlar los movimientos.
-![Captura2](https://github.com/user-attachments/assets/94954009-b6e2-4e5a-aa06-bf1355b82f88)
 
-Código:
+![Captura](https://github.com/user-attachments/assets/b439d339-f2a9-46ab-a5eb-7009a3db3d98)
+
+
+## Código:
 #include <AccelStepper.h>
 
 
