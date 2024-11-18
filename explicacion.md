@@ -22,6 +22,8 @@ Es para que la cortina no siga avanzando y para que se pueda saber el porcentaje
 
 El diagrama de flujo comenzaría con un sensor de luz, el LDR 03, que está conectado a una resistencia y un potenciómetro para ajustar la sensibilidad con respecto a la luz que recibe el sensor LDR. Además,
 aunque no sea visible, también incluye un sensor ultrasónico conectado al ESP32 y dos motores paso a paso bipolares. Estos motores están conectados a un puente H L298N. Cabe destacar que el puente H solo puede controlar un motor con sus dos bobinas, pero al requerir solo una bobina por motor, se utiliza de esta manera por motivos económicos.
+
+
 ![image](https://github.com/user-attachments/assets/4dd3712b-2eac-4b3b-a1b9-b11926be5747)
 
 
