@@ -48,9 +48,9 @@ También se puede observar que el puente H debe estar conectado a una fuente ext
 #define ECHO_PIN 33
 
 
-// Parámetros de la cortina
-const int LDR_THRESHOLD = 300; // Valor de luz para cerrar
-const int DISTANCE_THRESHOLD = 10; // Distancia para fin de carrera (en cm)
+
+const int LDR_THRESHOLD = 300; 
+const int DISTANCE_THRESHOLD = 10; 
 
 
 // Inicializar motores
@@ -81,18 +81,18 @@ void loop() {
     }
   }
  
-  delay(1000); // Espera un segundo antes de volver a leer
+  delay(1000); 
 }
 
 
 void openCurtains() {
-  motorOpen.moveTo(2000); // Ajustar según la longitud de la cortina
+  motorOpen.moveTo(2000); 
   motorOpen.runToPosition();
 }
 
 
 void closeCurtains() {
-  motorClose.moveTo(2000); // Ajustar según la longitud de la cortina
+  motorClose.moveTo(2000); 
   motorClose.runToPosition();
 }
 
@@ -105,7 +105,7 @@ long getDistance() {
   digitalWrite(TRIG_PIN, LOW);
  
   long duration = pulseIn(ECHO_PIN, HIGH);
-  long distance = (duration / 2) * 0.0343; // Convertir a cm
+  long distance = (duration / 2) * 0.0343;
   return distance;
 }
 
