@@ -39,11 +39,11 @@ También se puede observar que el puente H debe estar conectado a una fuente ext
 
 
 // Definición de pines
-#define MOTOR_OPEN_DIR 25 // Cambia según tu conexión
+#define MOTOR_OPEN_DIR 25 
 #define MOTOR_OPEN_STEP 26
 #define MOTOR_CLOSE_DIR 27
 #define MOTOR_CLOSE_STEP 14
-#define LDR_PIN 34 // Pin analógico
+#define LDR_PIN 34 
 #define TRIG_PIN 32
 #define ECHO_PIN 33
 
@@ -53,7 +53,6 @@ const int LDR_THRESHOLD = 300;
 const int DISTANCE_THRESHOLD = 10; 
 
 
-// Inicializar motores
 AccelStepper motorOpen(AccelStepper::DRIVER, MOTOR_OPEN_STEP, MOTOR_OPEN_DIR);
 AccelStepper motorClose(AccelStepper::DRIVER, MOTOR_CLOSE_STEP, MOTOR_CLOSE_DIR);
 
